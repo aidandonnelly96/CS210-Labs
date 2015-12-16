@@ -1,0 +1,19 @@
+import java.util.*;
+public class palrec{
+	public static void main(String args[]){
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter String : ");
+		String s1 = scan.nextLine();
+		System.out.println(isPal(s1));
+	}
+	public static String isPal(String s1){
+		if(s1.length()==0 || s1.length()==1){
+			return "TRUE";
+		}
+		if(s1.charAt(0)==(s1.charAt(s1.length()-1))){
+			return isPal(s1.substring(1,s1.length()-1));
+		}
+		
+		return "FALSE";
+	}
+}
