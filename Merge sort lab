@@ -1,0 +1,73 @@
+/*The objective of this lab session was to introduce the importance of response time in a program. 
+We were instructed to sort an array of strings alphabetically, but the final character of the string had the most significance. */
+
+
+
+import java.util.*;
+
+public class mesort{
+    public static void main(String[] args) {
+    	Scanner scan = new Scanner(System.in);
+    	  int i = 0;
+        String[] list = new String[Integer.parseInt(scan.nextLine())];
+        for(i = 0; i<=list.length-1; i++){
+        	list[i] = scan.nextLine();
+        }
+        for(i = 0; i < list.length; i++){
+        	list[i] = reverse(list[i]);
+        }
+        mergeSort(list);
+        for(i = 0; i<list.length; i++){
+        	list[i] = reverse(list[i]);
+        }
+        for(i = 0; i<list.length; i++){
+        	System.out.println(list[i]);
+        }
+    }
+
+    public static void mergeSort(String[] arr) {
+        int i = 0;
+        if (arr.length >= 2) {
+            String[] left = new String[arr.length / 2];
+            String[] right = new String[arr.length-a.length / 2];
+
+            for (i = 0; i < left.length; i++)
+            {
+                left[i] = a[i];
+            }
+            for (i = 0; i < right.length; i++)
+            {
+                right[i] = a[i + a.length / 2];
+            }
+
+            mergeSort(left);
+            mergeSort(right);
+
+            merge(a, left, right);
+        }
+    }
+
+    public static void merge(String[] arr, String[] left, String[] right) {
+        int i1 = 0;
+        int i2 = 0;
+        int i = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (i2 >= right.length || (i1 < left.length &&
+                                 left[i1].compareToIgnoreCase(right[i2])<0)) {
+                      arr[i] = left[i1];
+                      i1++;
+                 } else {
+                      arr[i] = right[i2];
+                      i2++;
+                 }
+            }
+    }
+    public static String reverse(String s1){
+    	String s2 = "";
+    	int i = 0;
+    	for(i=s1.length()-1; i >= 0; i--){
+    		s2 = s2+s1.charAt(i);
+    	}
+    	return s2;
+    }
+}
