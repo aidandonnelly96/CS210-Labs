@@ -1,0 +1,28 @@
+import java.util.*;
+public class Lucas
+{
+	public static void main(String args[]){
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter value:");
+		int x = scan.nextInt();
+		int num1 = L(x);
+		System.out.println(num1);
+	}
+	public static int L(int x){
+		
+		int i = 0;
+		int temp0 = 2;
+		int temp1 = 1;
+		int num1 = 0;
+		
+		for(i = 2; i <= x; i++){
+			
+			num1 = temp0+temp1;
+			temp0 = temp1;
+			temp1 = num1;
+						
+		}
+		return num1;
+	}
+}
