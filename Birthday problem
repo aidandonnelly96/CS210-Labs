@@ -1,0 +1,25 @@
+import java.util.*;
+public class x{
+public static void main(String args[]){
+      Scanner scan = new Scanner(System.in);
+      int n = scan.nextInt();
+      System.out.println(birthday(n));
+}
+
+public static double birthday(int n){
+
+double value= (365.0-(n-1))/365.0;
+       int x;
+		 if(n==1){
+            return 1.0;
+           
+      }
+      else{
+           
+          x = (n-1);
+      }
+      return (value*birthday(x));
+      
+    }
+  }
+      
