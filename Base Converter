@@ -1,0 +1,16 @@
+import java.util.*;
+public class baseConvert{
+	public static void main(String args[]){
+		Scanner scan = new Scanner(System.in);
+		int base1 = scan.nextInt();
+		int base2 = scan.nextInt();
+		int num = scan.nextInt();
+
+
+        String s2 = Integer.toString(num);
+		int x = Integer.parseInt(s2, base1);
+		String s1 = Integer.toString(x, base2);
+		System.out.println(s1.toUpperCase());
+   }
+
+}
