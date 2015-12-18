@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class bytes{
+	public static void main(String args[]){
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		String s1 = Integer.toString(num, 2);
+		while(s1.length()<32){
+			s1 = "0"+s1;
+		}
+		String sa = s1.substring(0,8);
+		String sb = s1.substring(8,16);
+		String sc = s1.substring(16, 24);
+		String sd = s1.substring(24, 32);
+		s1 = sd+sc+sb+sa;
+		num = Integer.parseInt(s1, 2);
+		System.out.println(num);
+	}
+}
