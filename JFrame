@@ -1,0 +1,71 @@
+package bc;
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Jf {
+
+	public static void main(String args[]) {
+		JFrame jf = new JFrame("Base Converter");
+		JButton convertButton = new JButton("Convert");
+		
+		JButton clearButton = new JButton("Clear");
+		JPanel controlPanel = new JPanel();
+		JLabel JL = new JLabel("Base 1:      ");
+		JLabel JL2 = new JLabel("Base 2:      ");
+		JLabel JL3 = new JLabel("Value:       ");
+		JLabel result = new JLabel("Result : ");
+		JTextArea Jt = new JTextArea("");
+		JTextArea Jt2 = new JTextArea("");
+		JTextArea Jt3 = new JTextArea("");
+		JLabel Jt4 = new JLabel("");
+		Jt4.setSize(350, 100);
+		Jt4.setVisible(true);
+		jf.setVisible(true);
+		jf.setSize(350, 200);
+		convertButton.setVisible(true);
+		clearButton.setVisible(true);
+		Jt.setColumns(20);
+		Jt2.setColumns(20);
+		Jt3.setColumns(20);
+		jf.add(controlPanel);
+		controlPanel.add(JL);
+		controlPanel.add(Jt);
+		controlPanel.add(JL2);
+		controlPanel.add(Jt2);
+		controlPanel.add(JL3);
+		controlPanel.add(Jt3);
+		controlPanel.add(result);
+		controlPanel.add(Jt4);
+		
+		controlPanel.add(convertButton);
+		controlPanel.add(clearButton);
+
+		convertButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String s1 = Jt3.getText();
+				int base1 = Integer.parseInt(Jt.getText());
+				int base2 = Integer.parseInt(Jt2.getText());
+				int x = Integer.parseInt(s1, base1);
+				String out = Integer.toString(x, base2);
+				Jt4.setText(out);
+			}
+		});
+		
+		
+		clearButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Jt.setText(" ");
+				Jt2.setText(" ");
+				Jt3.setText("");
+				Jt4.setText("");
+			}
+		});
+		
+		
+		
+
+	}
+
+
+}
